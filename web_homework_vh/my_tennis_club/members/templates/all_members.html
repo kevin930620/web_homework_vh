@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% block title %}
+My Tennis Club - List of all members
+{% endblock %}
+
+
+{% block content %}
+
+<p><a href="/">HOME</a></p>
+
+<h1>Members</h1>
+
+<h3>Age <= 20</h3>
+<ul>
+  {% for x in mymembers %}
+  {% if x.age <= 20 %}
+
+  <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }} {{ x.age }} </a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+
+<hr>
+
+<h3>Age > 20</h3>
+<ul>
+  {% for x in mymembers %}
+  {% if x.age > 20 %}
+
+  <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }} {{ x.age }} </a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endblock %}

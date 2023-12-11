@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ thecourt.name }}
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ thecourt.name }}</h1>
+
+<p>Field type : {{ thecourt.type }}</p>
+<p>locate : {{ thecourt.locate }} </p>
+<p>Back to <a href="/court">court</a></p>
+
+{% endblock %}
